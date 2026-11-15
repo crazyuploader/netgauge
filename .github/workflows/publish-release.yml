@@ -8,7 +8,7 @@ permissions:
   contents: write # create the GitHub Release
 
 concurrency:
-  group: release-${{ github.ref }}
+  group: publish-release-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:

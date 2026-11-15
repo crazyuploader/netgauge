@@ -1,5 +1,9 @@
 # NetGauge
 
+[![Build and test](https://github.com/crazyuploader/netgauge/actions/workflows/build-and-test.yml/badge.svg?branch=main)](https://github.com/crazyuploader/netgauge/actions/workflows/build-and-test.yml)
+[![Latest release](https://img.shields.io/github/v/release/crazyuploader/netgauge)](https://github.com/crazyuploader/netgauge/releases/latest)
+[![License: Apache-2.0](https://img.shields.io/github/license/crazyuploader/netgauge)](LICENSE)
+
 An Android app that opens an internet speed test website full screen, on phones, TVs and set-top boxes. It works with only a remote, no touch screen needed. Today it opens [FAST.com](https://fast.com/) with these settings already turned on:
 
 | Setting | Value |
