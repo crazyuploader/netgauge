@@ -44,7 +44,8 @@ jobs:
           echo "VERSION=$version" >> "$GITHUB_ENV"
 
       - name: Test and lint
-        run: ./gradlew spotlessCheck lintRelease testReleaseUnitTest
+        # AGP 9 runs unit tests for the debug build type only; the tests do not depend on it.
+        run: ./gradlew spotlessCheck lintRelease testDebugUnitTest
 
       - name: Write the keystore
         env:
@@ -56,7 +57,9 @@ jobs:
       - name: Build signed release APK
         env:
           SIGNING_STORE_PASSWORD: ${{ secrets.SIGNING_STORE_PASSWORD }}
-          SIGNING_KEY_ALIAS: ${{ secrets.SIGNING_KEY_ALIAS }}
+          # A variable, not a secret: the alias is not sensitive, and as a secret GitHub would mask every
+          # "netgauge" in the logs, the project name included.
+          SIGNING_KEY_ALIAS: ${{ vars.SIGNING_KEY_ALIAS }}
           SIGNING_KEY_PASSWORD: ${{ secrets.SIGNING_KEY_PASSWORD }}
         run: ./gradlew assembleRelease
 

@@ -55,14 +55,14 @@ The app opens the last-used site. A site picker comes with the second site.
 1. Set `versionCode` and `versionName` in `app/build.gradle.kts`, and add the changes to `CHANGELOG.md`.
 2. Push a tag that matches `versionName`, for example `git tag v0.2.0 && git push origin v0.2.0`.
 
-The "Publish signed release" workflow tests the code, builds the APK, signs it, checks the signing certificate, and attaches the APK and its SHA-256 file to a GitHub Release. It needs these repository secrets:
+The "Publish signed release" workflow tests the code, builds the APK, signs it, checks the signing certificate, and attaches the APK and its SHA-256 file to a GitHub Release. It needs these repository secrets and one variable:
 
-| Secret | Value |
-| --- | --- |
-| `SIGNING_KEYSTORE_BASE64` | The keystore file, base64 encoded |
-| `SIGNING_STORE_PASSWORD` | The keystore password |
-| `SIGNING_KEY_ALIAS` | The key alias |
-| `SIGNING_KEY_PASSWORD` | The key password |
+| Name | Kind | Value |
+| --- | --- | --- |
+| `SIGNING_KEYSTORE_BASE64` | Secret | The keystore file, base64 encoded |
+| `SIGNING_STORE_PASSWORD` | Secret | The keystore password |
+| `SIGNING_KEY_PASSWORD` | Secret | The key password |
+| `SIGNING_KEY_ALIAS` | Variable | The key alias. Not a secret: GitHub masks secret values in logs, and the alias is the project name |
 
 To sign a release build on your computer, create `keystore.properties` in the repository root. Git ignores it.
 
