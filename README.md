@@ -51,7 +51,7 @@ The app opens the last-used site. A site picker comes with the second site.
 1. Set `versionCode` and `versionName` in `app/build.gradle.kts`, and add the changes to `CHANGELOG.md`.
 2. Push a tag that matches `versionName`, for example `git tag v0.2.0 && git push origin v0.2.0`.
 
-The Release workflow tests the code, builds the APK, signs it, checks the signing certificate, and attaches the APK and its SHA-256 file to a GitHub Release. It needs these repository secrets:
+The "Publish signed release" workflow tests the code, builds the APK, signs it, checks the signing certificate, and attaches the APK and its SHA-256 file to a GitHub Release. It needs these repository secrets:
 
 | Secret | Value |
 | --- | --- |
