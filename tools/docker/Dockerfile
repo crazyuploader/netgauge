@@ -1,6 +1,6 @@
 # Android build environment for computers without a JDK or Android SDK.
 # Used by tools/docker-build.sh. CI does not use it (GitHub runners have the SDK).
-FROM eclipse-temurin:21-jdk
+FROM eclipse-temurin:25-jdk
 
 ARG CMDLINE_TOOLS_VERSION=16111833
 ARG CMDLINE_TOOLS_SHA1=e025545c62a8e64c7559119566a569fb1dec5f60
