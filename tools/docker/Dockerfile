@@ -13,7 +13,7 @@ ENV ANDROID_HOME=/opt/android-sdk \
     DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends unzip \
+    && apt-get install -y --no-install-recommends unzip curl ca-certificates \
     && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir -p "$ANDROID_HOME/cmdline-tools" \
