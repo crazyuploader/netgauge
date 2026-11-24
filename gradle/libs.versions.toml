@@ -1,12 +1,12 @@
 [versions]
-agp = "9.5.1"
+agp = "9.5.2"
 androidx-activity = "1.13.0"
 androidx-core = "1.19.1"
 junit = "4.13.2"
 # Used by Spotless as a plain version string, so Renovate reads it through this comment.
 # renovate: datasource=maven depName=com.pinterest.ktlint:ktlint-cli
 ktlint = "1.8.0"
-spotless = "8.11.0"
+spotless = "8.12.0"
 
 [libraries]
 androidx-activity = { module = "androidx.activity:activity-ktx", version.ref = "androidx-activity" }
